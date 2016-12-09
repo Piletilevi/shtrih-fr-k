@@ -1,0 +1,29 @@
+from sys import path as syspath
+syspath.append("C:\Users\PiletiLevi\Documents\GitHub\RasoASM\Lib\json")
+syspath.append("C:\Users\PiletiLevi\Documents\GitHub\RasoASM\Lib")
+syspath.append("C:\Users\PiletiLevi\Documents\GitHub\RasoASM")
+
+import clr
+
+clr.AddReference('IronPython')
+clr.AddReference('IronPython.Modules')
+clr.AddReference('Microsoft.Scripting.Metadata')
+clr.AddReference('Microsoft.Scripting')
+clr.AddReference('Microsoft.Dynamic')
+clr.AddReference('mscorlib')
+clr.AddReference('System')
+clr.AddReference('System.Data')
+#References to created DLL of python modules
+# clr.AddReference('StdLib')
+
+from json import load as loadJSON
+from os import environ, path
+from sys import argv, exit
+from System import Type, Activator
+from time import time, sleep
+from yaml import load as loadYAML
+
+
+oo = Type.GetTypeFromProgID('POS.SA97')
+# oo = Type.GetTypeFromProgID('DrvFR.dll')
+bills = Activator.CreateInstance(oo)
