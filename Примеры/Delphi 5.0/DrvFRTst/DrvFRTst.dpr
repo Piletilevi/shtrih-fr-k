@@ -1,0 +1,80 @@
+program DrvFRTst;
+
+{%ToDo 'DrvFRTst.todo'}
+
+uses
+  Forms,
+  fmuMain in 'FMU\fmuMain.pas' {fmMain},
+  untPages in 'Units\untPages.pas',
+  untUtil in 'Units\untUtil.pas',
+  fmuFont in 'FMU\fmuFont.pas' {fmFont},
+  fmuPrint2 in 'FMU\fmuPrint2.pas' {fmPrint2},
+  fmuGraph in 'FMU\fmuGraph.pas' {fmGraph},
+  fmuReg in 'FMU\fmuReg.pas' {fmReg},
+  fmuRep in 'FMU\fmuRep.pas' {fmRep},
+  fmuECR in 'FMU\fmuECR.pas' {fmECR},
+  fmuDump in 'FMU\fmuDump.pas' {fmDump},
+  fmuTable in 'FMU\fmuTable.pas' {fmTable},
+  fmuFM in 'FMU\fmuFM.pas' {fmFM},
+  fmuEKLZ2 in 'FMU\fmuEKLZ2.pas' {fmEKLZ2},
+  fmuEKLZRep3 in 'FMU\fmuEKLZRep3.pas' {fmEKLZRep3},
+  fmuBel in 'FMU\fmuBel.pas' {fmBel},
+  fmuNI in 'FMU\fmuNI.pas' {fmNI},
+  fmuLD in 'FMU\fmuLD.pas' {fmLD},
+  fmuEKLZRep in 'FMU\fmuEKLZRep.pas' {fmEKLZRep},
+  untTypes in 'Units\untTypes.pas',
+  fmuProg in 'FMU\fmuProg.pas' {fmProg},
+  fmuEKLZ3 in 'FMU\fmuEKLZ3.pas' {fmEKLZ3},
+  fmuDocCc in 'FMU\fmuDocCc.pas' {fmDocCc},
+  fmuDocSp in 'FMU\fmuDocSp.pas' {fmDocSp},
+  fmuDocCcEx in 'FMU\fmuDocCcEx.pas' {fmDocCcEx},
+  fmuDocRg in 'FMU\fmuDocRg.pas' {fmDocRg},
+  fmuDocSpEx in 'FMU\fmuDocSpEx.pas' {fmDocSpEx},
+  fmuDocRgEx in 'FMU\fmuDocRgEx.pas' {fmDocRgEx},
+  fmuDocCfg in 'FMU\fmuDocCfg.pas' {fmDocCfg},
+  fmuDocFill in 'FMU\fmuDocFill.pas' {fmDocFill},
+  fmuDocCl in 'FMU\fmuDocCl.pas' {fmDocCl},
+  fmuDocPs in 'FMU\fmuDocPs.pas' {fmDocPs},
+  fmuDocEs in 'FMU\fmuDocEs.pas' {fmDocEs},
+  CompName in 'Units\CompName.pas',
+  fmuData in 'FMU\fmuData.pas' {fmData},
+  fmuState in 'FMU\fmuState.pas' {fmState},
+  fmuDoc in 'FMU\fmuDoc.pas' {fmDoc},
+  ComSec in 'Units\ComSec.pas',
+  fmuAbout in 'FMU\fmuAbout.pas' {fmAbout},
+  untVInfo in 'FMU\untVInfo.pas',
+  fmuRecpt in 'FMU\fmuRecpt.pas' {fmRecpt},
+  fmuPrintBarcode in 'FMU\fmuPrintBarcode.pas' {fmPrintBarcode},
+  fmuIBM in 'FMU\fmuIBM.pas' {fmIBM},
+  fmuSCPsw in 'FMU\fmuSCPsw.pas' {fmSCPsw},
+  fmuPrint in 'FMU\fmuPrint.pas' {fmPrint},
+  fmuCashControl in 'FMU\fmuCashControl.pas' {fmCashControl},
+  WSockets in 'Units\WSockets.pas',
+  fmuTest in 'FMU\fmuTest.pas' {fmTest},
+  fmuConnect2 in 'FMU\fmuConnect2.pas' {fmConnect},
+  fmuServer in 'FMU\fmuServer.pas' {fmServer},
+  fmuPrintLine in 'FMU\fmuPrintLine.pas' {fmPrintLine},
+  fmuLock in 'FMU\fmuLock.pas' {fmLock},
+  SizeableForm in 'Units\SizeableForm.pas',
+  TestManager in 'Units\TestManager.pas',
+  untDriver in 'Units\untDriver.pas',
+  fmuDocAdEx in 'FMU\fmuDocAdEx.pas' {fmDocAdEx},
+  fmuDocDsEx in 'FMU\fmuDocDsEx.pas' {fmDocDsEx},
+  fmuDocAd in 'FMU\fmuDocAd.pas' {fmDocAd},
+  fmuDocDs in 'FMU\fmuDocDs.pas' {fmDocDs},
+  fmuDocCD in 'FMU\fmuDocCD.pas' {fmDocCD},
+  fmuDocCB in 'FMU\fmuDocCB.pas' {fmDocCB},
+  fmuState2 in 'FMU\fmuState2.pas' {fmState2},
+  fmuEKLZRep4 in 'FMU\fmuEKLZRep4.pas' {fmEKLZRep4},
+  fmuEKLZRep2 in 'FMU\fmuEKLZRep2.pas' {fmEKLZRep2},
+  fmuECRReg in 'FMU\fmuECRReg.pas' {fmECRReg},
+  fmuDocReprint in 'FMU\fmuDocReprint.pas' {fmDocReprint};
+
+{$R *.RES}
+
+begin
+  Application.Initialize;
+  Application.Title := 'Тест драйвера ФР';
+  Application.CreateForm(TfmMain, fmMain);
+  Application.Run;
+end.
