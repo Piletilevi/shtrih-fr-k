@@ -1,4 +1,11 @@
-# ECRMode()
+## Functions and attributes involved:
+
+### Connect()
+Establishes connection (reserves COM).
+Also invokes **GetDeviceMetrics()** and **GetECRStatus()**
+
+### ECRMode
+Attribute filled by **GetECRStatus()**
 ```
 0  - Принтер в рабочем режиме
 1  - Выдача данных
@@ -17,3 +24,21 @@
 14 - Печать подкладного документа
 15 - Фискальный подкладной документ сформирован
 ```
+
+### ECRMode8Status
+```
+0 - Открыт чек продажи
+1 - Открыт чек покупки
+2 - Открыт чек возврата продажи
+3 - Открыт чек возврата покупки
+```
+
+### ResetECR()
+- ECRMode == 1 *Выдача данных*:
+    **InterruptDataStream()**
+- ECRMode == 6 *Ожидание подтверждения вводе даты*:
+    **ConfirmDate()**
+- ECRMode == 8 *Открытый документ*:
+    **CancelCheck()**
+- ECRMode == 10 *Тестовый прогон*:
+    **InterruptTest()**
