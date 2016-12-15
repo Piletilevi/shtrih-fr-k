@@ -5,14 +5,14 @@ Establishes connection (reserves COM).
 Also invokes **GetDeviceMetrics()** and **GetECRStatus()**
 
 ### ResetECR()
-- ECRMode == 1 *Выдача данных*:
-    **InterruptDataStream()**
-- ECRMode == 6 *Ожидание подтверждения вводе даты*:
-    **ConfirmDate()**
-- ECRMode == 8 *Открытый документ*:
-    **CancelCheck()**
-- ECRMode == 10 *Тестовый прогон*:
-    **InterruptTest()**
+- ECRMode == 1 *Выдача данных*:  
+    Performs **InterruptDataStream()**
+- ECRMode == 6 *Ожидание подтверждения вводе даты*:  
+    Performs **ConfirmDate()**
+- ECRMode == 8 *Открытый документ*:  
+    Performs **CancelCheck()**
+- ECRMode == 10 *Тестовый прогон*:  
+    Performs **InterruptTest()**
 
 ### ECRMode
 Attribute filled by **GetECRStatus()**
