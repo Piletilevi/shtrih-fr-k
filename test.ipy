@@ -1,29 +1,164 @@
-from sys import path as syspath
-syspath.append("C:\Users\PiletiLevi\Documents\GitHub\RasoASM\Lib\json")
-syspath.append("C:\Users\PiletiLevi\Documents\GitHub\RasoASM\Lib")
-syspath.append("C:\Users\PiletiLevi\Documents\GitHub\RasoASM")
+# coding: utf-8
 
-import clr
-
-clr.AddReference('IronPython')
-clr.AddReference('IronPython.Modules')
-clr.AddReference('Microsoft.Scripting.Metadata')
-clr.AddReference('Microsoft.Scripting')
-clr.AddReference('Microsoft.Dynamic')
-clr.AddReference('mscorlib')
-clr.AddReference('System')
-clr.AddReference('System.Data')
-#References to created DLL of python modules
-# clr.AddReference('StdLib')
-
-from json import load as loadJSON
-from os import environ, path
-from sys import argv, exit
+from os import path
+from sys import argv, stdin
 from System import Type, Activator
-from time import time, sleep
 from yaml import load as loadYAML
+from time import sleep
 
 
-oo = Type.GetTypeFromProgID('POS.SA97')
-# oo = Type.GetTypeFromProgID('DrvFR.dll')
-bills = Activator.CreateInstance(oo)
+BASEDIR = path.realpath(path.dirname(argv[0]))
+with open(path.join(BASEDIR, 'ECRModes.yaml'), 'r') as ecrmode_table_file:
+	ECRMODE_TABLE = loadYAML(ecrmode_table_file)['ECRMode']
+
+
+def ecr_mode_string(k):
+	return str(k) + ":" + ECRMODE_TABLE[k]['name']
+
+def prc():
+	if v.ResultCode:
+		print str(v.ResultCode) + ':' + v.ResultCodeDescription
+		print "ENTER to exit(1)"
+		stdin.readline()
+		exit(1)
+	print "Pass"
+
+
+def insist(method, password):
+	global v
+	v.Password = password
+	method()
+	if v.ResultCode:
+		while v.ResultCode:
+			print str(v.ResultCode) + ':' + v.ResultCodeDescription
+			print "ENTER to retry"
+			stdin.readline()
+			method()
+	v.Password = 0
+
+
+def connect():
+	global v
+	insist(v.WaitConnection, 1000)
+	insist(v.Connect, 1000)
+	prc()
+
+
+def closeShift():
+	global v
+	print "performing PrintReportWithCleaning() (Press ENTER)"
+	stdin.readline()
+ 	insist(v.PrintReportWithCleaning, 29000)
+ 	prc()
+
+
+def openShift():
+	global v
+	print "performing PrintReportWithoutCleaning() (Press ENTER)"
+	stdin.readline()
+ 	insist(v.PrintReportWithoutCleaning, 29000)
+ 	prc()
+ 	# Shift will be actually opened with first recipe
+	# v.OpenSession()
+
+
+def setMode2():
+	global v
+
+	print "Initial ECRMode " + ecr_mode_string(v.ECRMode)
+
+	if v.ECRMode == 8:
+		insist(v.Beep, 1000)
+		print "Waiting for mode change"
+		print "v.ECRMode8Status " + str(v.ECRMode8Status)
+		while v.ECRMode == 8:
+			insist(v.GetShortECRStatus, 1000)
+			sleep(0.1)
+		print "ECRMode " + ecr_mode_string(v.ECRMode)
+
+	insist(v.ResetECR, 1000)
+	prc()
+
+	if v.ECRMode == 0:
+		insist(v.Beep, 1000)
+		print "Waiting for mode change"
+		while v.ECRMode == 0:
+			insist(v.GetShortECRStatus, 1000)
+			sleep(0.1)
+
+	if v.ECRMode not in [2,3,4]:
+		print "Can't go on with ECRMode: " + ecr_mode_string(v.ECRMode)
+		print "Exiting (Press ENTER)"
+		stdin.readline()
+		exit(1)
+
+	if v.ECRMode == 3:
+		print ecr_mode_string(v.ECRMode)
+		closeShift()
+
+	if v.ECRMode == 4:
+		print ecr_mode_string(v.ECRMode)
+	 	openShift()
+
+
+oo = Type.GetTypeFromProgID('Addin.DrvFR')
+v = Activator.CreateInstance(oo)
+prc()
+
+connect()
+setMode2()
+
+stdin.readline()
+exit(0)
+
+
+v.CutType = True
+v.CutCheck()
+
+v.StringQuantity = 2
+v.FeedDocument()
+
+v.StringForPrinting= 'Спичечный коробок'
+v.PrintString()
+
+v.StringQuantity = 1
+v.FeedDocument()
+
+v.CutType = True
+v.CutCheck()
+
+print "presale ECRMode " + ecr_mode_string(v.ECRMode)
+stdin.readline()
+exit(1)
+
+
+
+
+v.Quantity=1000
+v.Price=1.56
+v.Department=1
+v.Tax1=1
+v.Tax2=2
+v.Tax3=0
+v.Tax4=0
+v.StringForPrinting= 'Спичечный коробок'
+v.Sale()
+
+print "After sale ECRMode " + str(v.ECRMode)
+stdin.readline()
+
+v.Summ1 = 1500
+v.Summ2 = 100
+v.Summ3 = 200
+v.Summ4 = 300
+v.DiscountOnCheck = 5
+v.Tax1 = 1
+v.Tax2 = 2
+v.Tax3 = 0
+v.Tax4 = 0
+v.StringForPrinting =  '===================================='
+print "close"
+v.CloseCheck()
+
+v.Discconnect()
+
