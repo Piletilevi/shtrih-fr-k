@@ -23,7 +23,7 @@
         {
           "type": "tickets",
           "amount": 1,
-          "name": "Bilietas",
+          "name": "Білет",
           "ticketId": 123456781,
           "cost": 0.04,
           "kkm": true,
@@ -32,7 +32,7 @@
         {
           "type": "tickets",
           "amount": 1,
-          "name": "Bilietas",
+          "name": "Білет",
           "ticketId": 123456782,
           "cost": 0.04,
           "kkm": true,
@@ -41,7 +41,7 @@
         {
           "type": "tickets",
           "amount": 1,
-          "name": "Bilietas",
+          "name": "Білет",
           "ticketId": 123456783,
           "cost": 0.04,
           "kkm": true,
@@ -50,7 +50,7 @@
         {
           "type": "tickets",
           "amount": 1,
-          "name": "Bilietas",
+          "name": "Білет",
           "ticketId": 123456784,
           "cost": 0.04,
           "kkm": true,
@@ -59,7 +59,7 @@
         {
           "type": "service fee",
           "amount": 2,
-          "name": "Service fee 1.00",
+          "name": "Плата за паслугі 1.00",
           "cost": 0.02,
           "kkm": true,
           "vatPerc": 21.0
@@ -67,7 +67,7 @@
         {
           "type": "service fee",
           "amount": 2,
-          "name": "Zalgirio arenos mokestis",
+          "name": "Плата за паслугі 2",
           "cost": 0.02,
           "kkm": true,
           "vatPerc": 21.0
