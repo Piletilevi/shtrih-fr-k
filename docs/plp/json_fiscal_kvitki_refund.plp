@@ -59,7 +59,7 @@
         {
           "type": "service fee",
           "amount": 2,
-          "name": "Paslaugos mokestis 1.00",
+          "name": "Плата за паслугі 1.00",
           "cost": 0.02,
           "kkm": true,
           "vatPerc": 21.0
@@ -67,7 +67,7 @@
         {
           "type": "service fee",
           "amount": 2,
-          "name": "Zalgirio arenos mokestis",
+          "name": "Плата за паслугі 2",
           "cost": 0.02,
           "kkm": true,
           "vatPerc": 21.0
