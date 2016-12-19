@@ -1,0 +1,18 @@
+{
+  "info": "fiscal",
+  "printer": "Fiscal printer",
+  "printerType": "fiscal",
+  "printingDriverVersion": "2.0.2-bt",
+  "operation": "opencashreg",
+
+  "readTimeout": "50",
+  "writeTimeout": "50",
+  "cashierPw": "",
+  "adminPw": "",
+  "sysAdminPw": "",
+  "cerUserPw": "",
+  "cardPaymentUnit": "",
+  "cardPayment/Settings/": "",
+
+  "salesPoint": "Kvitki test salespoint"
+}
