@@ -23,7 +23,7 @@
         {
           "type": "tickets",
           "amount": 1,
-          "name": "Bilietai",
+          "name": "Білет",
           "ticketId": 123456781,
           "cost": 0.04,
           "kkm": true,
@@ -32,7 +32,7 @@
         {
           "type": "tickets",
           "amount": 1,
-          "name": "Bilietai",
+          "name": "Білет",
           "ticketId": 123456782,
           "cost": 0.04,
           "kkm": true,
@@ -41,7 +41,7 @@
         {
           "type": "tickets",
           "amount": 1,
-          "name": "Bilietai",
+          "name": "Білет",
           "ticketId": 123456783,
           "cost": 0.04,
           "kkm": true,
@@ -50,7 +50,7 @@
         {
           "type": "tickets",
           "amount": 1,
-          "name": "Bilietai",
+          "name": "Білет",
           "ticketId": 123456784,
           "cost": 0.04,
           "kkm": true,
