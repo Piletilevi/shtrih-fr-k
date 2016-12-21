@@ -2,17 +2,23 @@
   "info": "fiscal",
   "printer": "Fiscal printer",
   "printerType": "fiscal",
-  "printingDriverVersion": "2.0.2-bt",
-  "operation": "startshift",
-
-  "readTimeout": "50",
-  "writeTimeout": "50",
-  "cashierPw": "",
-  "adminPw": "",
-  "sysAdminPw": "",
-  "cerUserPw": "",
-  "cardPaymentUnit": "",
-  "cardPayment/Settings/": "",
-
-  "salesPoint": "Kvitki test salespoint"
+  "printingDriverVersion": "2.0.4-bt",
+  "print": {
+    "type": "fiscal",
+    "name": "Shtrih FR-K",
+    "readTimeout": "50",
+    "writeTimeout": "50",
+    "driverVersion": "2.0.4-bt",
+    "updateURL": "https://downloads.piletilevi.ee/pos_2.0.4-bt"
+  },
+  "salesPoint": {
+    "name": "Kvitki test salespoint",
+    "cashierPw": "",
+    "adminPw": "",
+    "sysAdminPw": "",
+    "cerUserPw": "",
+    "cardPaymentUnit": "",
+    "cardPayment/Settings/": ""
+  },
+  "operation": "startshift"
 }
