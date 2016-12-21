@@ -20,5 +20,5 @@
     "cardPaymentUnit": "",
     "cardPayment/Settings/": ""
   },
-  "operation": "feed",
+  "operation": "feed"
 }
