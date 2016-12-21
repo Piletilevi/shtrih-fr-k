@@ -2,23 +2,29 @@
   "info": "fiscal",
   "printer": "Fiscal printer",
   "printerType": "fiscal",
-  "printingDriverVersion": "2.0.2-bt",
+  "printingDriverVersion": "2.0.4-bt",
+  "print": {
+    "type": "fiscal",
+    "name": "Shtrih FR-K",
+    "readTimeout": "50",
+    "writeTimeout": "50",
+    "driverVersion": "2.0.4-bt",
+    "updateURL": "https://downloads.piletilevi.ee/pos_2.0.4-bt"
+  },
+  "salesPoint": {
+    "name": "Kvitki test salespoint",
+    "cashierPw": "1",
+    "adminPw": "29",
+    "sysAdminPw": "30",
+    "cerUserPw": "",
+    "cardPaymentUnit": "",
+    "cardPayment/Settings/": ""
+  },
   "operation": "refund",
-
-  "readTimeout": "50",
-  "writeTimeout": "50",
-  "cashierPw": "",
-  "adminPw": "",
-  "sysAdminPw": "",
-  "cerUserPw": "",
-  "cardPaymentUnit": "",
-  "cardPayment/Settings/": "",
-
-  "salesPoint": "Kvitki test salespoint",
   "payments": [
     {
       "type": "1",
-      "cost": 0.20,
+      "cost": 0.2,
       "components": [
         {
           "type": "tickets",
@@ -27,7 +33,7 @@
           "ticketId": 123456781,
           "cost": 0.04,
           "kkm": true,
-          "vatPerc": 0.0
+          "vatPerc": 0
         },
         {
           "type": "tickets",
@@ -36,7 +42,7 @@
           "ticketId": 123456782,
           "cost": 0.04,
           "kkm": true,
-          "vatPerc": 0.0
+          "vatPerc": 0
         },
         {
           "type": "tickets",
@@ -45,7 +51,7 @@
           "ticketId": 123456783,
           "cost": 0.04,
           "kkm": true,
-          "vatPerc": 0.0
+          "vatPerc": 0
         },
         {
           "type": "tickets",
@@ -54,7 +60,7 @@
           "ticketId": 123456784,
           "cost": 0.04,
           "kkm": true,
-          "vatPerc": 0.0
+          "vatPerc": 0
         },
         {
           "type": "service fee",
@@ -62,7 +68,7 @@
           "name": "Плата за паслугі 1.00",
           "cost": 0.02,
           "kkm": true,
-          "vatPerc": 21.0
+          "vatPerc": 21
         },
         {
           "type": "service fee",
@@ -70,7 +76,7 @@
           "name": "Плата за паслугі 2",
           "cost": 0.02,
           "kkm": true,
-          "vatPerc": 21.0
+          "vatPerc": 21
         }
       ]
     }
