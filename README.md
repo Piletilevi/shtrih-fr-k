@@ -40,7 +40,7 @@ Attribute filled by **GetECRStatus()**
 15 - Фискальный подкладной документ сформирован
 ```
 
-Now the code [IronPython](http://ironpython.net) should look like:
+The code in [IronPython](http://ironpython.net):
 ``` python
 from sys import stdin
 from System import Type, Activator
