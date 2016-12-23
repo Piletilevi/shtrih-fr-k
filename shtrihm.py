@@ -15,6 +15,8 @@ USER_SADM = 30000
 USER_ADM = 29000
 USER_KASSIR = 1000
 
+RETRY_SEC = 0.1
+TIMEOUT_SEC = 2
 
 def ecr_mode_string(k):
 	return str(k) + ":" + ECRMODE_TABLE[k]['name']
@@ -25,7 +27,6 @@ def prc():
 		print "ENTER to exit(1)"
 		stdin.readline()
 		exit(1)
-	print "Pass"
 
 
 def insist(method, password):
@@ -67,8 +68,15 @@ def openShift():
  	# Shift will be actually opened with first recipe
 
 
+def sysAdminCancelCheck():
+	global v
+	v.Password = USER_SADM
+	v.SysAdminCancelCheck()
+
+
 def setMode2():
 	global v
+	timecount = 0
 
 	print "Initial ECRMode " + ecr_mode_string(v.ECRMode)
 
@@ -78,7 +86,12 @@ def setMode2():
 		print "v.ECRMode8Status " + str(v.ECRMode8Status)
 		while v.ECRMode == 8:
 			insist(v.GetShortECRStatus, USER_KASSIR)
-			sleep(0.1)
+			sleep(RETRY_SEC)
+			timecount = timecount + RETRY_SEC
+			if timecount > TIMEOUT_SEC:
+				timecount = 0
+				print "sysAdminCancelCheck"
+				sysAdminCancelCheck()
 		print "ECRMode " + ecr_mode_string(v.ECRMode)
 
 	insist(v.ResetECR, USER_KASSIR)
@@ -89,7 +102,7 @@ def setMode2():
 		print "Waiting for mode change"
 		while v.ECRMode == 0:
 			insist(v.GetShortECRStatus, USER_KASSIR)
-			sleep(0.1)
+			sleep(RETRY_SEC)
 
 	if v.ECRMode not in [2,3,4]:
 		print "Can't go on with ECRMode: " + ecr_mode_string(v.ECRMode)
@@ -106,24 +119,29 @@ def setMode2():
 	 	openShift()
 
 
-def sale(options, password = USER_KASSIR):
-	# print options
-	for attr, value in options.iteritems():
+def sale(sale_options, payment_options, password = USER_KASSIR):
+	# print sale_options
+	for attr, value in sale_options.iteritems():
 		print 'Setting ' + attr + ' = ' + str(value)
 		setattr(v, attr, value)
 	print 'SALEEEE'
 	insist(v.sale, password)
-	for attr, value in options.iteritems():
+	for attr, value in sale_options.iteritems():
 		print 'Getting ' + attr + ' = ' + str(getattr(v, attr))
 		#setattr(v, attr, 0 if type(value) is int else '')
-	print v.Summ1
-	insist(v.CheckSubTotal, password)
-	#v.Summ1
-	v.Summ2 = 0
-	v.Summ3 = 0
-	v.Summ4 = 0
-	v.DiscountOnCheck = 0
 
+	insist(v.CheckSubTotal, password)
+	total = v.Summ1
+	print 'Total: ' + str(total)
+
+	for attr, value in payment_options.iteritems():
+		print 'Setting ' + attr + ' = ' + str(value)
+		setattr(v, attr, value)
+
+	print v.Tax1
+	print v.Tax2
+	print v.Tax3
+	print v.Tax4
 	print v.Summ1
 	print v.Summ2
 	print v.Summ3
