@@ -11,19 +11,24 @@ cm.setMode2()
 
 # stdin.readline()
 
-options = {
-	'Quantity': 1000,
-	'Price': 1.56,
+sale_options = {
+	'Quantity': 1,
+	'Price': 10,
 	'Department': 1,
-	'Tax1': 1,
-	'Tax2': 2,
+	'Tax1': 0,
+	'Tax2': 0,
 	'Tax3': 0,
 	'Tax4': 0,
 	'StringForPrinting': 'ongi jama majas vene jutuga?'
 }
-
-
-cm.sale(options, cm.USER_ADM)
+payment_options = {
+	'Summ1': 0.5,
+	'Summ2': 1.5,
+	'Summ3': 3,
+	'Summ4': 4,
+	'DiscountOnCheck': 10
+}
+cm.sale(sale_options, payment_options, cm.USER_KASSIR)
 
 exit(0)
 
