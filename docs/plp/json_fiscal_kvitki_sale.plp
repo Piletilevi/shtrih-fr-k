@@ -2,34 +2,33 @@
     "info": "fiscal",
     "printer": "Fiscal printer",
     "printerType": "fiscal",
-    "printingDriverVersion": "2.0.4-bt",
     "__comment": [
-        "Above four properties are marked obsolete in 1.9 and will not appear in 2.0",
+        "Three properties above are marked obsolete in 1.9 and will not appear in 2.0",
         "info is replaced by dataType",
         "printer is replaced by printerData.systemName",
-        "printingDriverVersion is replaced by printerData.driverVersion",
         "printerType is also moved to printerData section - printerData.printerType",
         "In 2.0 several new fields will make appearance:",
         "- plpVersion",
         "  SemVer style versioning. Starting with last 1.x.x version 1.9.0 that defines new and marks obsolete fields.",
-        "- printerData.driverVersionDownloadURL",
+        "- printingDriverVersionDownloadURL",
         "- Passwords for various userlevels",
         "- Printer-specific timeouts",
-        "- Card payment section"
+        "- Card payment settings section"
     ],
     "plpVersion": "1.9.0",
+    "printingDriverVersion": "2.0.4-bt",
+    "printingDriverVersionDownloadURL": "https://downloads.piletilevi.ee/pos_2.0.4-bt",
     "dataType": "fiscal",
     "salesPoint": "Kvitki test salespoint",
     "operation": "sale",
-    "cardPayment": {
-        "cardPaymentSettings": "",
-        "cardPaymentUnit": ""
+    "cardPaymentSettings": {
+        "unitName": "",
+        "setting1": "...",
+        "setting2": "...",
     },
     "printerData": {
         "type": "fiscal",
         "systemName": "Shtrih FR-K",
-        "driverVersion": "2.0.4-bt",
-        "driverVersionURL": "https://downloads.piletilevi.ee/pos_2.0.4-bt",
         "readTimeout": 50,
         "writeTimeout": 50,
         "adminPw": "29",
@@ -50,7 +49,7 @@
                     "name": "Білет",
                     "ticketId": 123456781,
                     "type": "tickets",
-                    "vatPerc": 0
+                    "Tax1": 0
                 },
                 {
                     "amount": 1,
@@ -59,7 +58,7 @@
                     "name": "Білет",
                     "ticketId": 123456782,
                     "type": "tickets",
-                    "vatPerc": 0
+                    "Tax1": 0
                 },
                 {
                     "amount": 2,
@@ -67,7 +66,7 @@
                     "kkm": true,
                     "name": "Плата за паслугі 1.00",
                     "type": "service fee",
-                    "vatPerc": 21
+                    "Tax1": 0
                 }
             ]
         },
@@ -83,7 +82,7 @@
                     "name": "Білет",
                     "ticketId": 123456784,
                     "type": "tickets",
-                    "vatPerc": 0
+                    "Tax1": 0
                 },
                 {
                     "amount": 1,
@@ -91,7 +90,7 @@
                     "kkm": true,
                     "name": "Плата за паслугі 2",
                     "type": "service fee",
-                    "vatPerc": 21
+                    "Tax1": 0
                 }
             ]
         },
@@ -107,7 +106,7 @@
                     "name": "Білет",
                     "ticketId": 123456784,
                     "type": "tickets",
-                    "vatPerc": 0
+                    "Tax1": 0
                 },
                 {
                     "amount": 1,
@@ -115,7 +114,7 @@
                     "kkm": true,
                     "name": "Плата за паслугі 3",
                     "type": "service fee",
-                    "vatPerc": 21
+                    "Tax1": 0
                 }
             ]
         }
