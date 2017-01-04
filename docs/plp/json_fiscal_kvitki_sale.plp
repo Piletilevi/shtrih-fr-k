@@ -2,10 +2,8 @@
     "info": "fiscal",
     "printer": "Fiscal printer",
     "printerType": "fiscal",
-    "printingDriverVersion": "2.0.4-bt",
-    "printingDriverVersionURL": "http...",
     "__comment": [
-        "Above four properties are marked obsolete in 1.9 and will not appear in 2.0",
+        "The three properties above are marked obsolete in 1.9 and will not appear in 2.0",
         "info is replaced by dataType",
         "printer is replaced by printerData.printerName",
         "printerType is also moved to printerData section - printerData.printerType",
@@ -19,12 +17,15 @@
     ],
     "plpVersion": "1.9.0",
     "dataType": "fiscal",
+    "printingDriverVersion": "2.0.4-bt",
+    "printingDriverVersionURL": "http...",
     "salesPoint": "Kvitki test salespoint",
     "operation": "sale",
+
     "cardPaymentUnitSettings": {
-    "cardPaymentUnit": "",
-    "cardPaymentSetting1": "",
-    "cardPaymentSetting2": ""
+        "cardPaymentUnit": "",
+        "cardPaymentSetting1": "",
+        "cardPaymentSetting2": ""
     },
     "printerData": {
         "type": "fiscal",
@@ -52,7 +53,7 @@
                     "name": "Білет",
                     "ticketId": 123456781,
                     "type": "tickets",
-                    "vatPerc": 0
+                    "vatGroup": 0
                 },
                 {
                     "amount": 1,
@@ -61,7 +62,7 @@
                     "name": "Білет",
                     "ticketId": 123456782,
                     "type": "tickets",
-                    "vatPerc": 0
+                    "vatGroup": 0
                 },
                 {
                     "amount": 2,
@@ -69,7 +70,7 @@
                     "kkm": true,
                     "name": "Плата за паслугі 1.00",
                     "type": "service fee",
-                    "vatPerc": 21
+                    "vatGroup": 21
                 }
             ]
         },
@@ -85,7 +86,7 @@
                     "name": "Білет",
                     "ticketId": 123456784,
                     "type": "tickets",
-                    "vatPerc": 0
+                    "vatGroup": 0
                 },
                 {
                     "amount": 1,
@@ -93,7 +94,7 @@
                     "kkm": true,
                     "name": "Плата за паслугі 2",
                     "type": "service fee",
-                    "vatPerc": 21
+                    "vatGroup": 21
                 }
             ]
         },
@@ -109,7 +110,7 @@
                     "name": "Білет",
                     "ticketId": 123456784,
                     "type": "tickets",
-                    "vatPerc": 0
+                    "vatGroup": 0
                 },
                 {
                     "amount": 1,
@@ -117,7 +118,7 @@
                     "kkm": true,
                     "name": "Плата за паслугі 3",
                     "type": "service fee",
-                    "vatPerc": 21
+                    "vatGroup": 21
                 }
             ]
         }
