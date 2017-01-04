@@ -1,9 +1,47 @@
 {
-    "plpVersion": "2",
     "info": "fiscal",
+    "printer": "Fiscal printer",
+    "printerType": "fiscal",
+    "printingDriverVersion": "2.0.4-bt",
+    "__comment": [
+        "Above four properties are marked obsolete in 1.9 and will not appear in 2.0",
+        "info is replaced by dataType",
+        "printer is replaced by printerData.systemName",
+        "printingDriverVersion is replaced by printerData.driverVersion",
+        "printerType is also moved to printerData section - printerData.printerType",
+        "In 2.0 several new fields will make appearance:",
+        "- plpVersion",
+        "  SemVer style versioning. Starting with last 1.x.x version 1.9.0 that defines new and marks obsolete fields.",
+        "- printerData.driverVersionDownloadURL",
+        "- Passwords for various userlevels",
+        "- Printer-specific timeouts",
+        "- Card payment section"
+    ],
+    "plpVersion": "1.9.0",
+    "dataType": "fiscal",
+    "salesPoint": "Kvitki test salespoint",
     "operation": "sale",
+    "cardPayment": {
+        "cardPaymentSettings": "",
+        "cardPaymentUnit": ""
+    },
+    "printerData": {
+        "type": "fiscal",
+        "systemName": "Shtrih FR-K",
+        "driverVersion": "2.0.4-bt",
+        "driverVersionURL": "https://downloads.piletilevi.ee/pos_2.0.4-bt",
+        "readTimeout": 50,
+        "writeTimeout": 50,
+        "adminPw": "29",
+        "cashierPw": "1",
+        "cerUserPw": "",
+        "sysAdminPw": "30"
+    },
     "payments": [
         {
+            "cost": 0.1,
+            "type": "1",
+            "name": "cachePayment",
             "components": [
                 {
                     "amount": 1,
@@ -24,14 +62,20 @@
                     "vatPerc": 0
                 },
                 {
-                    "amount": 1,
-                    "cost": 0.04,
+                    "amount": 2,
+                    "cost": 0.02,
                     "kkm": true,
-                    "name": "Білет",
-                    "ticketId": 123456783,
-                    "type": "tickets",
-                    "vatPerc": 0
-                },
+                    "name": "Плата за паслугі 1.00",
+                    "type": "service fee",
+                    "vatPerc": 21
+                }
+            ]
+        },
+        {
+            "cost": 0.05,
+            "type": "1",
+            "name": "giftTicketPayment",
+            "components": [
                 {
                     "amount": 1,
                     "cost": 0.04,
@@ -42,44 +86,38 @@
                     "vatPerc": 0
                 },
                 {
-                    "amount": 2,
-                    "cost": 0.02,
-                    "kkm": true,
-                    "name": "Плата за паслугі 1.00",
-                    "type": "service fee",
-                    "vatPerc": 21
-                },
-                {
-                    "amount": 2,
-                    "cost": 0.02,
+                    "amount": 1,
+                    "cost": 0.01,
                     "kkm": true,
                     "name": "Плата за паслугі 2",
                     "type": "service fee",
                     "vatPerc": 21
                 }
-            ],
-            "cost": 0.2,
-            "type": "1"
+            ]
+        },
+        {
+            "cost": 0.05,
+            "type": "1",
+            "name": "cardPayment",
+            "components": [
+                {
+                    "amount": 1,
+                    "cost": 0.04,
+                    "kkm": true,
+                    "name": "Білет",
+                    "ticketId": 123456784,
+                    "type": "tickets",
+                    "vatPerc": 0
+                },
+                {
+                    "amount": 1,
+                    "cost": 0.01,
+                    "kkm": true,
+                    "name": "Плата за паслугі 3",
+                    "type": "service fee",
+                    "vatPerc": 21
+                }
+            ]
         }
-    ],
-    "print": {
-        "driverVersion": "2.0.4-bt",
-        "name": "Shtrih FR-K",
-        "readTimeout": 50,
-        "type": "fiscal",
-        "updateURL": "https://downloads.piletilevi.ee/pos_2.0.4-bt",
-        "writeTimeout": 50
-    },
-    "printer": "Fiscal printer",
-    "printerType": "fiscal",
-    "printingDriverVersion": "2.0.4-bt",
-    "salesPoint": {
-        "adminPw": "29",
-        "cardPayment/Settings/": "",
-        "cardPaymentUnit": "",
-        "cashierPw": "1",
-        "cerUserPw": "",
-        "name": "Kvitki test salespoint",
-        "sysAdminPw": "30"
-    }
+    ]
 }
