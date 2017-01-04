@@ -24,7 +24,7 @@
     "cardPaymentSettings": {
         "unitName": "",
         "setting1": "...",
-        "setting2": "...",
+        "setting2": "..."
     },
     "printerData": {
         "type": "fiscal",
