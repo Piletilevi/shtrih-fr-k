@@ -1,4 +1,5 @@
 {
+  "plpVersion": "2",
   "info": "fiscal",
   "printer": "Fiscal printer",
   "printerType": "fiscal",
