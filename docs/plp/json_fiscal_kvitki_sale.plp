@@ -2,6 +2,7 @@
     "info": "fiscal",
     "printer": "Fiscal printer",
     "printerType": "fiscal",
+    
     "__comment": [
         "The three properties above are marked obsolete in 1.9 and will not appear in 2.0",
         "info is replaced by dataType",
@@ -16,18 +17,19 @@
         "- Printer-specific timeouts",
         "- Card payment unit settings section"
     ],
+    
     "plpVersion": "1.9.0",
     "dataType": "fiscal",
     "printingDriverVersion": "2.0.4-bt",
     "printingDriverVersionURL": "http...",
     "salesPoint": "Kvitki test salespoint",
-    "operation": "sale",
 
     "cardPaymentUnitSettings": {
         "cardPaymentUnit": "",
         "cardPaymentSetting1": "",
         "cardPaymentSetting2": ""
     },
+    
     "printerData": {
         "type": "fiscal",
         "printerName": "Shtrih FR-K",
@@ -40,7 +42,10 @@
         "cashierPw": "1",
         "certUserPw": "",
         "sysAdminPw": "30"
-    },
+    }
+
+    "operation": "sale",
+   
     "payments": [
         {
             "cost": 0.1,
