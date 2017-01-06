@@ -76,7 +76,7 @@
                     "kkm": true,
                     "name": "Плата за паслугі 1.00",
                     "type": "service fee",
-                    "vatGroup": 21
+                    "vatGroup": 0
                 }
             ]
         },
@@ -100,7 +100,7 @@
                     "kkm": true,
                     "name": "Плата за паслугі 2",
                     "type": "service fee",
-                    "vatGroup": 21
+                    "vatGroup": 0
                 }
             ]
         },
@@ -124,7 +124,7 @@
                     "kkm": true,
                     "name": "Плата за паслугі 3",
                     "type": "service fee",
-                    "vatGroup": 21
+                    "vatGroup": 0
                 }
             ]
         }
