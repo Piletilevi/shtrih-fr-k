@@ -1,0 +1,154 @@
+# coding: utf-8
+
+from json import load as loadJSON
+from os import environ, path
+from sys import argv, exit
+from System import Type, Activator
+from time import time, sleep
+from yaml import load as loadYAML
+
+import shtrihm as cm
+
+BASEDIR = path.realpath(path.dirname(argv[0]))
+PACKAGE_FILE_NAME = path.join(BASEDIR, 'package.json')
+with open(PACKAGE_FILE_NAME, 'r') as package_json_file:
+    PACKAGE_JSON = loadJSON(package_json_file)
+# with open('vat_table_' + environ['plp_language'] + '.yaml', 'r') as vat_table_file:
+#     VAT_TABLE = loadYAML(vat_table_file)
+with open('payment_methods_' + environ['plp_language'] + '.yaml', 'r') as payment_methods_file:
+    PAYMENT_METHODS = loadYAML(payment_methods_file)
+
+print '{0} {1}'.format(PACKAGE_JSON['name'], PACKAGE_JSON['version'])
+
+if 'plp_filename' in environ:
+    plp_filename = environ['plp_filename']
+else:
+    print 'PLP filename not in environment.'
+    if len(argv) > 1:
+        plp_filename = argv[1]
+    else:
+        print 'PLP filename not in arguments, neither. Bye.'
+        exit(0)
+
+with open(plp_filename, 'rU') as plp_data_file:
+    plp_json_data = loadJSON(plp_data_file)
+
+
+VALID_OPERATIONS = ('cut', 'endshift', 'feed', 'opencachreg', 'refund', 'sale', 'startshift', 'xreport')
+
+def validate_fiscal(plp_json_data):
+    if (not 'printerData' in plp_json_data):
+        raise IndexError('Missing "printerData" field in plp file.')
+    if (not 'type' in plp_json_data['printerData']):
+        raise IndexError('Missing "dataType" field in plp file.')
+    if (not 'salesPoint' in plp_json_data):
+        raise IndexError('Missing "salesPoint" field in plp file.')
+    if (not 'dataType' in plp_json_data):
+        raise IndexError('Missing "dataType" field in plp file.')
+    if plp_json_data['dataType'] == 'fiscal':
+        if not 'operation' in plp_json_data:
+            raise IndexError('Missing "operation" field in plp file.')
+        if plp_json_data['operation'] not in VALID_OPERATIONS:
+            raise ValueError('"operation" must be one of {0} in plp file.'.format(VALID_OPERATIONS))
+    else:
+        raise ValueError('"dataType" must be "fiscal" in plp file.')
+
+validate_fiscal(plp_json_data)
+
+
+operation = plp_json_data['operation']
+print('{0} {1} operation from:\n{2}'.format(plp_json_data['dataType'], operation, plp_filename))
+
+cm.connect()
+cm.setMode2()
+
+
+if operation == 'startshift':
+    print('startshift')
+    cm.openShift()
+elif operation == 'endshift':
+    print('endshift')
+    cm.closeShift()
+elif operation in ('sale', 'refund'):
+    cm.printLine('Operation: {0}'.format(operation))
+    # payment_method_total = {'1':0, '2':0, '3':0, '4':0}
+    # payment_method_total_validate = {'1':0, '2':0, '3':0, '4':0}
+    # payment_method_name = {'1':'GRYNIEJI', '2':'KORTELĖ', '3':'DOVANŲ KORTELĖ', '4':'-'}
+    payment_method_total = {}
+    payment_method_total_validate = {}
+    payment_method_name = {}
+    payment_method_xcounter = {}
+    for pm in PAYMENT_METHODS:
+        payment_method_name[pm['code']] = pm['name']
+        payment_method_total[pm['code']] = 0
+        payment_method_total_validate[pm['code']] = 0
+        payment_method_xcounter[pm['code']] = pm['Xcounter']
+
+    payment_sum_failed = False
+
+    sales_options = []
+    payment_options = []
+
+    for payment in plp_json_data['payments']:
+        if payment['type'] not in payment_method_total:
+            cm.printLine('There is no payment type "' + payment['type'] + '" in payment_method_total.')
+            cm.cut()
+            raise ValueError('There is no payment type "' + payment['type'] + '" in payment_method_total.')
+        payment_method_total[payment['type']] += payment['cost']
+        cm.printLine('{0} = {1}'.format(payment['name'], '%.2f' % payment['cost']))
+
+        payment_options.append({'cost': payment['cost'], 'type': payment['type']})
+
+        for component in payment['components']:
+            payment_method_total_validate[payment['type']] += component['cost']
+            if not 'kkm' in component:
+                continue
+            if not component['kkm']:
+                continue
+            if not 'amount' in component:
+                component['amount'] = 1
+            if component['amount'] != 1: # we dont want to print amounts in Belorusia
+                component['amount'] = 1
+
+            # if component['type'] not in VAT_TABLE:
+            #     cm.printLine('There is no component "' + component['type'] + '" in VAT table.')
+            #     bills.FCancel()
+            #     bills.Close()
+            #     raise ValueError('There is no component "' + component['type'] + '" in VAT table.')
+            # if component['name'] not in VAT_TABLE[component['type']]:
+            #     cm.printLine('There is no component named "' + component['name']
+            #         + '" under "' + component['type'] + '" in VAT table.')
+            #     bills.FCancel()
+            #     bills.Close()
+            #     raise ValueError('There is no component named "' + component['name']
+            #         + '" under "' + component['type'] + '" in VAT table.')
+            # vat_sign = VAT_TABLE[component['type']][component['name']]
+            sales_options.append(component)
+            #bills.FOperation(component['name'], component['amount'], component['cost'], vat_sign)
+
+
+    for ix in payment_method_total:
+        if round(payment_method_total[ix], 2) != round(payment_method_total_validate[ix], 2):
+            for i in range(0, 10):
+                cm.printLine()
+            cm.printLine('-------------------------------------------')
+            cm.printLine('        !!! FISCAL DATA ERROR !!!')
+            cm.printLine('            In payment type {0}'.format(ix))
+            cm.printLine('Sum of component costs | {0}'.format(payment_method_total_validate[ix]))
+            cm.printLine('doesnot match          | !=')
+            cm.printLine('sum of payment costs   | {0}'.format(payment_method_total[ix]))
+            cm.printLine('-------------------------------------------')
+            for i in range(0, 10):
+                cm.printLine()
+            payment_sum_failed = True
+
+    if payment_sum_failed:
+        cm.cut()
+    else:
+#        bills.FFinish3(
+#            payment_method_name['3'], payment_method_total['3'], payment_method_xcounter['3'], # 3:'DOVANŲ KORTELĖ' -> 2: 2nd credit counter
+#            payment_method_name['2'], payment_method_total['2'], payment_method_xcounter['2'], # 2:'KORTELĖ'        -> 1: 1st credit counter
+#            payment_method_name['1'], payment_method_total['1'], payment_method_xcounter['1']) # 1:'GRYNIEJI'       -> 0: cache payment
+        cm.sale(sales_options, payment_options)
+
+bills.Close()
