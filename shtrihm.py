@@ -36,6 +36,7 @@ def insist(method, password):
 	if v.ResultCode:
 		while v.ResultCode:
 			print str(v.ResultCode) + ':' + v.ResultCodeDescription
+			print('Method: {0}'.format(method))
 			print "ENTER to retry"
 			stdin.readline()
 			method()
@@ -120,53 +121,46 @@ def setMode2():
 
 
 def sale(sales_options, payment_options, password = USER_KASSIR):
-	# print sales_options
 	for item in sales_options:
-		print('unpacking {0}'.format(item))
+		# print('unpacking {0}'.format(item))
 		for attr, value in {
 			'Quantity': item['amount'],
 			'Price': item['cost'],
-			'Department': 1,
-			'Tax1': item['vatPerc'],
+			# 'Department': 1,
+			'Tax1': item['vatGroup'],
 			'Tax2': 0,
 			'Tax3': 0,
 			'Tax4': 0,
-			'StringForPrinting': item['name']
+			'StringForPrinting': item['name'].decode(encoding='UTF-8')
 		}.iteritems():
 			print 'Setting {0} = {1}'.format(attr, value)
 			setattr(v, attr, value)
-		print 'SALEEEE'
 		insist(v.sale, password)
 
 	for item in payment_options:
-		for attr, value in {
-			'Summ1': item['cost'] if item['type'] == 1 else 0,
-			'Summ1': item['cost'] if item['type'] == 2 else 0,
-			'Summ1': item['cost'] if item['type'] == 3 else 0,
-			'Summ1': item['cost'] if item['type'] == 4 else 0,
-			'DiscountOnCheck': 0
-		}.iteritems():
-			print 'Setting ' + attr + ' = ' + str(value)
-			setattr(v, attr, value)
+		# print 'Setting from {0}'.format(item)
+		attr = 'Summ{0}'.format(item['type'])
+		setattr(v, attr, item['cost'])
 
-	print v.Tax1
-	print v.Tax2
-	print v.Tax3
-	print v.Tax4
-	print v.Summ1
-	print v.Summ2
-	print v.Summ3
-	print v.Summ4
-	print v.DiscountOnCheck
+	setattr(v, 'DiscountOnCheck', 0)
 
+	# for x in xrange(1,4):
+	# 	print 'Summ{0} = {1} + {2}'.format( x,
+	# 										getattr(v, 'Summ{0}'.format(x)), 
+	# 										getattr(v, 'Tax{0}'.format(x)) )
+	# print v.DiscountOnCheck
+	# print v.StringForPrinting
+
+	setattr(v, 'StringForPrinting', '')
+	# setattr(v, 'StringForPrinting', '- - - - - - - - - - - - - - - - - - - -')
 	insist(v.CloseCheck, password)
 
 
 def printLine(string = ' '):
 	setattr(v, 'UseReceiptRibbon', True)
 	setattr(v, 'UseJournalRibbon', False)
-	setattr(v, 'StringForPrinting', string)
-	print ('Printing on receipt: "{0}"'.format(string))
+	setattr(v, 'StringForPrinting', string.decode(encoding='UTF-8'))
+	print ('Printing on receipt: "{0}"'.format(string.decode(encoding='UTF-8')))
 	insist(v.PrintString, USER_KASSIR)
 
 
@@ -184,17 +178,6 @@ def cut(feedAfterCutCount = 0, cutType = True, password = USER_KASSIR):
 		setattr(v, 'FeedLineCount', feedAfterCutCount)
 	setattr(v, 'CutType', cutType)
 	insist(v.CutCheck, password)
-
-
-# v.Quantity=1000
-# v.Price=1.56
-# v.Department=1
-# v.Tax1=1
-# v.Tax2=2
-# v.Tax3=0
-# v.Tax4=0
-# v.StringForPrinting= 'Спичечный коробок'
-# v.Sale()
 
 
 oo = Type.GetTypeFromProgID('Addin.DrvFR')
