@@ -119,24 +119,35 @@ def setMode2():
 	 	openShift()
 
 
-def sale(sale_options, payment_options, password = USER_KASSIR):
-	# print sale_options
-	for attr, value in sale_options.iteritems():
-		print 'Setting ' + attr + ' = ' + str(value)
-		setattr(v, attr, value)
-	print 'SALEEEE'
-	insist(v.sale, password)
-	for attr, value in sale_options.iteritems():
-		print 'Getting ' + attr + ' = ' + str(getattr(v, attr))
-		#setattr(v, attr, 0 if type(value) is int else '')
+def sale(sales_options, payment_options, password = USER_KASSIR):
+	# print sales_options
+	for item in sales_options:
+		print('unpacking {0}'.format(item))
+		for attr, value in {
+			'Quantity': item['amount'],
+			'Price': item['cost'],
+			'Department': 1,
+			'Tax1': item['vatPerc'],
+			'Tax2': 0,
+			'Tax3': 0,
+			'Tax4': 0,
+			'StringForPrinting': item['name']
+		}.iteritems():
+			print 'Setting {0} = {1}'.format(attr, value)
+			setattr(v, attr, value)
+		print 'SALEEEE'
+		insist(v.sale, password)
 
-	insist(v.CheckSubTotal, password)
-	total = v.Summ1
-	print 'Total: ' + str(total)
-
-	for attr, value in payment_options.iteritems():
-		print 'Setting ' + attr + ' = ' + str(value)
-		setattr(v, attr, value)
+	for item in payment_options:
+		for attr, value in {
+			'Summ1': item['cost'] if item['type'] == 1 else 0,
+			'Summ1': item['cost'] if item['type'] == 2 else 0,
+			'Summ1': item['cost'] if item['type'] == 3 else 0,
+			'Summ1': item['cost'] if item['type'] == 4 else 0,
+			'DiscountOnCheck': 0
+		}.iteritems():
+			print 'Setting ' + attr + ' = ' + str(value)
+			setattr(v, attr, value)
 
 	print v.Tax1
 	print v.Tax2
@@ -150,6 +161,29 @@ def sale(sale_options, payment_options, password = USER_KASSIR):
 
 	insist(v.CloseCheck, password)
 
+
+def printLine(string = ' '):
+	setattr(v, 'UseReceiptRibbon', True)
+	setattr(v, 'UseJournalRibbon', False)
+	setattr(v, 'StringForPrinting', string)
+	print ('Printing on receipt: "{0}"'.format(string))
+	insist(v.PrintString, USER_KASSIR)
+
+
+def feed(feedLineCount = 4):
+	for x in xrange(0, feedLineCount):
+		printLine()
+
+
+def cut(feedAfterCutCount = 0, cutType = True, password = USER_KASSIR):
+	feed()
+	if (feedAfterCutCount == 0):
+		setattr(v, 'FeedAfterCut', False)
+	else:
+		setattr(v, 'FeedAfterCut', True)
+		setattr(v, 'FeedLineCount', feedAfterCutCount)
+	setattr(v, 'CutType', cutType)
+	insist(v.CutCheck, password)
 
 
 # v.Quantity=1000
