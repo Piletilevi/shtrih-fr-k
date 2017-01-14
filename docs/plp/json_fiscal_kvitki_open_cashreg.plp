@@ -23,7 +23,6 @@
     "printingDriverVersion": "2.0.4-bt",
     "printingDriverVersionURL": "http...",
     "salesPoint": "Kvitki test salespoint",
-    "operation": "sale",
 
     "cardPaymentUnitSettings": {
         "cardPaymentUnit": "",
@@ -45,6 +44,6 @@
         "sysAdminPw": "30"
     },
     
-    "operation": "opencashreg"
+    "operation": "open_cashreg"
     
 }
