@@ -59,7 +59,7 @@
                     "name": "Білет",
                     "ticketId": 123456781,
                     "type": "tickets",
-                    "vatGroup": 1
+                    "vatGroup": 0
                 },
                 {
                     "amount": 1,
@@ -68,7 +68,7 @@
                     "name": "Білет",
                     "ticketId": 123456782,
                     "type": "tickets",
-                    "vatGroup": 1
+                    "vatGroup": 0
                 },
                 {
                     "amount": 2,
@@ -76,7 +76,7 @@
                     "kkm": true,
                     "name": "Плата за паслугі 1.00",
                     "type": "service fee",
-                    "vatGroup": 2
+                    "vatGroup": 0
                 }
             ]
         }

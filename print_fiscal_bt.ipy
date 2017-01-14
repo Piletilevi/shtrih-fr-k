@@ -34,7 +34,7 @@ with open(plp_filename, 'rU') as plp_data_file:
     plp_json_data = loadJSON(plp_data_file, 'WIN1251')
 
 
-VALID_OPERATIONS = ('cut', 'endshift', 'feed', 'opencachreg', 'refund', 'sale', 'startshift', 'xreport')
+VALID_OPERATIONS = ('cut', 'endshift', 'feed', 'insertcash', 'open_cachreg', 'refund', 'sale', 'startshift', 'withdrawcash', 'xreport')
 
 def validate_fiscal(plp_json_data):
     if (not 'printerData' in plp_json_data):
@@ -56,21 +56,11 @@ def validate_fiscal(plp_json_data):
 validate_fiscal(plp_json_data)
 
 
-operation = plp_json_data['operation']
-print('{0} {1} operation from:\n{2}'.format(plp_json_data['dataType'], operation, plp_filename))
+def sale():
+    global PAYMENT_METHODS
+    global plp_json_data
+    global cm
 
-cm.connect()
-cm.setMode2()
-
-
-if operation == 'startshift':
-    print('startshift')
-    cm.openShift()
-elif operation == 'endshift':
-    print('endshift')
-    cm.closeShift()
-elif operation in ('sale', 'refund'):
-    # cm.printLine('Operation: {0}'.format(operation))
     payment_method_total = {}
     payment_method_total_validate = {}
     payment_method_name = {}
@@ -128,6 +118,43 @@ elif operation in ('sale', 'refund'):
 
     if payment_sum_failed:
         cm.cut()
-    else:
+    elif plp_json_data['operation'] == 'sale':
         cm.sale(sales_options, payment_options)
+    elif plp_json_data['operation'] == 'refund':
+        cm.returnSale(sales_options, payment_options)
+    else:
+        raise ValueError('operation={0} - must be sale/refund.'.format(plp_json_data['operation']))
+
+
+
+operation = plp_json_data['operation']
+print('{0} {1} operation from:\n{2}'.format(plp_json_data['dataType'], operation, plp_filename))
+
+cm.connect()
+cm.setMode2()
+
+print('operation {0}'.format(operation))
+if operation == 'cut':
+    cm.cut()
+elif operation == 'endshift':
+    cm.closeShift()
+elif operation == 'feed':
+    cm.feed()
+elif operation == 'insertcash':
+    pass
+elif operation == 'open_cashreg':
+    pass
+elif operation == 'refund':
+    sale()
+elif operation == 'sale':
+    sale()
+elif operation == 'startshift':
+    cm.openShift()
+elif operation == 'withdrawcash':
+    pass
+elif operation == 'xreport':
+    pass
+else:
+    raise ValueError('"operation" must be one of {0} in plp file.'.format(VALID_OPERATIONS))
+
 

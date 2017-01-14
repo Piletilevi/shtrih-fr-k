@@ -133,9 +133,9 @@ def sale(sales_options, payment_options, password = USER_KASSIR):
 			'Tax4': 0,
 			'StringForPrinting': item['name'].decode(encoding='UTF-8')
 		}.iteritems():
-			print 'Setting {0} = {1}'.format(attr, value)
+			# print 'Setting {0} = {1}'.format(attr, value)
 			setattr(v, attr, value)
-		insist(v.sale, password)
+		insist(v.Sale, password)
 
 	for item in payment_options:
 		# print 'Setting from {0}'.format(item)
@@ -151,6 +151,34 @@ def sale(sales_options, payment_options, password = USER_KASSIR):
 	# print v.DiscountOnCheck
 	# print v.StringForPrinting
 
+	setattr(v, 'StringForPrinting', '')
+	# setattr(v, 'StringForPrinting', '- - - - - - - - - - - - - - - - - - - -')
+	insist(v.CloseCheck, password)
+
+
+def returnSale(sales_options, payment_options, password = USER_KASSIR):
+	for item in sales_options:
+		# print('unpacking {0}'.format(item))
+		for attr, value in {
+			'Quantity': item['amount'],
+			'Price': item['cost'],
+			# 'Department': 1,
+			'Tax1': item['vatGroup'],
+			'Tax2': 0,
+			'Tax3': 0,
+			'Tax4': 0,
+			'StringForPrinting': item['name'].decode(encoding='UTF-8')
+		}.iteritems():
+			# print 'Setting {0} = {1}'.format(attr, value)
+			setattr(v, attr, value)
+		insist(v.ReturnSale, password)
+
+	for item in payment_options:
+		# print 'Setting from {0}'.format(item)
+		attr = 'Summ{0}'.format(item['type'])
+		setattr(v, attr, item['cost'])
+
+	setattr(v, 'DiscountOnCheck', 0)
 	setattr(v, 'StringForPrinting', '')
 	# setattr(v, 'StringForPrinting', '- - - - - - - - - - - - - - - - - - - -')
 	insist(v.CloseCheck, password)
