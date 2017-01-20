@@ -1,29 +1,84 @@
 {
-    "info": "fiscal",
-    "printer": "Fiscal printer",
-    "printerType": "fiscal",
-    
-    "__comment": [
-        "The three properties above are marked obsolete in 1.9 and will not appear in 2.0",
-        "info is replaced by dataType",
-        "printer is replaced by printerData.printerName",
-        "printerType is also moved to printerData section - printerData.printerType",
-        "In 1.9 several new fields will make appearance, to be ready for version 2.0:",
-        "- plpVersion",
-        "  SemVer style versioning. Starting with last 1.x.x version 1.9.0 that defines new and marks obsolete fields.",
-        "- printerData.printingDriverVersionURL",
-        "- COM port number and bad rate",
-        "- Passwords for various userlevels",
-        "- Printer-specific timeouts",
-        "- Card payment unit settings section"
-    ],
-    
-    "plpVersion": "1.9.0",
-    "dataType": "fiscal",
-    "printingDriverVersion": "2.0.4-bt",
-    "printingDriverVersionURL": "http...",
-    "salesPoint": "Kvitki test salespoint",
+  "plpVersion": "2.0.0",
+  "feedbackToken": 123456,
+  "feedbackUrl": "",
+  "printingDriverVersion": "2.0.4-bt",
+  "printingDriverVersionURL": "http...",
+  "salesPoint": "Kvitki test salespoint",
 
+  "ticketData": {
+    "printerData": {
+        "type": "tickets",
+        "printerName": "Godex DT4x"
+    },
+    "tickets": [
+      {
+        "ticketId": "",
+        "ticketBarCode": "",
+        "eventName1": "",
+        "eventName2": "",
+        "eventLocation": "",
+        "eventDateTime": "",
+        "infoText1": "",
+        "infoText2": "",
+        "infoText3": "",
+        "infoText4": "",
+        "infoText5": "",
+        "infoTextPdf": "",
+        "section1": "",
+        "section2": "",
+        "row1": "",
+        "row2": "",
+        "seat1": "",
+        "seat2": "",
+        "priceGroup1": "",
+        "priceGroup2": "",
+        "ticketPrice": "",
+        "serviceFee": "",
+        "extraFee": "",
+        "totalText": "",
+        "totalPrice": "",
+        "imageTop": "",
+        "imageLeft": "",
+        "imageBottom": "",
+        "saleDateTime": ""
+      },
+      {
+        "ticketId": "",
+        "ticketBarCode": "",
+        "eventName1": "",
+        "eventName2": "",
+        "eventLocation": "",
+        "eventDateTime": "",
+        "infoText1": "",
+        "infoText2": "",
+        "infoText3": "",
+        "infoText4": "",
+        "infoText5": "",
+        "infoTextPdf": "",
+        "section1": "",
+        "section2": "",
+        "row1": "",
+        "row2": "",
+        "seat1": "",
+        "seat2": "",
+        "priceGroup1": "",
+        "priceGroup2": "",
+        "ticketPrice": "",
+        "serviceFee": "",
+        "extraFee": "",
+        "totalText": "",
+        "totalPrice": "",
+        "imageTop": "",
+        "imageLeft": "",
+        "imageBottom": "",
+        "saleDateTime": ""
+      }
+    ]
+  },
+
+  "fiscalData": {
+    
     "cardPaymentUnitSettings": {
         "cardPaymentUnit": "",
         "cardPaymentSetting1": "",
@@ -129,4 +184,7 @@
             ]
         }
     ]
+  }
+
+    
 }
