@@ -1,15 +1,15 @@
 {
   "plpVersion": "2.0.0",
-  "feedbackToken": 123456,
+  "feedbackToken": "",
   "feedbackUrl": "",
-  "printingDriverVersion": "2.0.4-bt",
-  "printingDriverVersionURL": "http...",
-  "salesPoint": "Kvitki test salespoint",
+  "printingDriverVersion": "",
+  "printingDriverVersionURL": "http://",
+  "salesPoint": "",
 
   "ticketData": {
     "printerData": {
         "type": "tickets",
-        "printerName": "Godex DT4x"
+        "printerName": ""
     },
     "tickets": [
       {
@@ -87,16 +87,16 @@
     
     "printerData": {
         "type": "fiscal",
-        "printerName": "Shtrih FR-K",
+        "printerName": "",
         "printerRegNumber": "",
         "comPortNumber": "",
         "ComPortBaudRate": "",
-        "readTimeout": 50,
-        "writeTimeout": 50,
-        "adminPw": "29",
-        "cashierPw": "1",
+        "readTimeout": ,
+        "writeTimeout": ,
+        "adminPw": "",
+        "cashierPw": "",
         "certUserPw": "",
-        "sysAdminPw": "30"
+        "sysAdminPw": ""
     },
 
     "operation": "sale",
