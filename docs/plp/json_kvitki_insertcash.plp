@@ -9,7 +9,7 @@
         "operation": "insertcash",
         "cashAmount": 5.5,
         "printerData": {
-            "type": "fiscal",
+            "type": "fiscal_shtrihm",
             "printerName": "",
             "printerRegNumber": "",
             "comPortNumber": "",

@@ -8,7 +8,7 @@
     "fiscalData": {
         "operation": "cut",
         "printerData": {
-            "type": "fiscal",
+            "type": "fiscal_shtrihm",
             "printerName": "",
             "printerRegNumber": "",
             "comPortNumber": "",

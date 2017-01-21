@@ -13,7 +13,7 @@
             "cardPaymentSetting2": ""
         },
         "printerData": {
-            "type": "fiscal",
+            "type": "fiscal_shtrihm",
             "printerName": "",
             "printerRegNumber": "",
             "comPortNumber": "",
