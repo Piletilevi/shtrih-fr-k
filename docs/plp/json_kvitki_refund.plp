@@ -1,0 +1,68 @@
+{
+  "plpVersion": "2.0.0",
+  "feedbackToken": "",
+  "feedbackUrl": "",
+  "printingDriverVersion": "",
+  "printingDriverVersionURL": "http://",
+  "salesPoint": "",
+
+  "fiscalData": {
+
+    "operation": "refund",
+    
+    "cardPaymentUnitSettings": {
+        "cardPaymentUnit": "",
+        "cardPaymentSetting1": "",
+        "cardPaymentSetting2": ""
+    },
+    
+    "printerData": {
+        "type": "fiscal",
+        "printerName": "",
+        "printerRegNumber": "",
+        "comPortNumber": "",
+        "ComPortBaudRate": "",
+        "readTimeout": ,
+        "writeTimeout": ,
+        "adminPw": "",
+        "cashierPw": "",
+        "certUserPw": "",
+        "sysAdminPw": ""
+    },
+   
+    "payments": [
+        {
+            "type": "1",
+            "name": "cachePayment",
+            "cost": 0.1,
+            "components": [
+                {
+                    "amount": 1,
+                    "cost": 0.04,
+                    "kkm": true,
+                    "name": "Білет",
+                    "ticketId": 123456781,
+                    "type": "tickets",
+                    "vatGroup": 0
+                },
+                {
+                    "amount": 1,
+                    "cost": 0.04,
+                    "kkm": true,
+                    "name": "Білет",
+                    "ticketId": 123456782,
+                    "type": "tickets",
+                    "vatGroup": 0
+                },
+                {
+                    "amount": 2,
+                    "cost": 0.02,
+                    "kkm": true,
+                    "name": "Плата за паслугі 1",
+                    "type": "service fee",
+                    "vatGroup": 0
+                }
+            ]
+        }
+  }    
+}
