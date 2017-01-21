@@ -1,33 +1,25 @@
 {
-  "plpVersion": "2.0.0",
-  "feedbackToken": "",
-  "feedbackUrl": "",
-  "printingDriverVersion": "",
-  "printingDriverVersionURL": "http://",
-  "salesPoint": "",
-
-  "fiscalData": {
-
-    "operation": "withdrawcash",
-    "cashAmount": 5.5,
-    
-    "printerData": {
-        "type": "fiscal",
-        "printerName": "",
-        "printerRegNumber": "",
-        "comPortNumber": "",
-        "ComPortBaudRate": "",
-        "readTimeout": ,
-        "writeTimeout": ,
-        "adminPw": "",
-        "cashierPw": "",
-        "certUserPw": "",
-        "sysAdminPw": ""
+    "plpVersion": "2.0.0",
+    "feedbackToken": "",
+    "feedbackUrl": "",
+    "printingDriverVersion": "",
+    "printingDriverVersionURL": "http://",
+    "salesPoint": "",
+    "fiscalData": {
+        "operation": "withdrawcash",
+        "cashAmount": 5.5,
+        "printerData": {
+            "type": "fiscal",
+            "printerName": "",
+            "printerRegNumber": "",
+            "comPortNumber": "",
+            "ComPortBaudRate": "",
+            "readTimeout": null,
+            "writeTimeout": null,
+            "adminPw": "",
+            "cashierPw": "",
+            "certUserPw": "",
+            "sysAdminPw": ""
+        }
     }
-
-
-   
-  }
-
-    
 }
