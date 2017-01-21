@@ -106,7 +106,7 @@
                         "cost": 0.04,
                         "kkm": true,
                         "name": "Білет",
-                        "ticketId": 123456781,
+                        "ticketId": "123456781",
                         "type": "tickets",
                         "vatGroup": 0
                     },
@@ -115,7 +115,7 @@
                         "cost": 0.04,
                         "kkm": true,
                         "name": "Білет",
-                        "ticketId": 123456782,
+                        "ticketId": "123456782",
                         "type": "tickets",
                         "vatGroup": 0
                     },
@@ -139,7 +139,7 @@
                         "cost": 0.04,
                         "kkm": true,
                         "name": "Білет",
-                        "ticketId": 123456784,
+                        "ticketId": "123456784",
                         "type": "tickets",
                         "vatGroup": 0
                     },
