@@ -1,0 +1,32 @@
+{
+  "plpVersion": "2.0.0",
+  "feedbackToken": "",
+  "feedbackUrl": "",
+  "printingDriverVersion": "",
+  "printingDriverVersionURL": "http://",
+  "salesPoint": "",
+
+  "fiscalData": {
+
+    "operation": "feed",
+    
+    "printerData": {
+        "type": "fiscal",
+        "printerName": "",
+        "printerRegNumber": "",
+        "comPortNumber": "",
+        "ComPortBaudRate": "",
+        "readTimeout": ,
+        "writeTimeout": ,
+        "adminPw": "",
+        "cashierPw": "",
+        "certUserPw": "",
+        "sysAdminPw": ""
+    }
+
+
+   
+  }
+
+    
+}
