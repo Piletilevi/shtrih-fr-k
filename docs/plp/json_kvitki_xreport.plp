@@ -2,8 +2,11 @@
     "plpVersion": "2.0.0",
     "feedbackToken": "",
     "feedbackUrl": "",
+    "busnId": "", 
     "printingDriverVersion": "",
     "printingDriverVersionURL": "http://",
+    "salesPointText": "",
+    "salesPointCountry": "",
     "salesPoint": "",
     "fiscalData": {
         "operation": "xreport",
