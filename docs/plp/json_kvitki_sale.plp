@@ -110,7 +110,7 @@
                         "name": "Білет",
                         "ticketId": "123456781",
                         "type": "tickets",
-                        "vatGroup": 0
+                        "vatGroup": "0"
                     },
                     {
                         "amount": 1,
@@ -119,7 +119,7 @@
                         "name": "Білет",
                         "ticketId": "123456782",
                         "type": "tickets",
-                        "vatGroup": 0
+                        "vatGroup": "0"
                     },
                     {
                         "amount": 2,
@@ -127,7 +127,7 @@
                         "kkm": true,
                         "name": "Плата за паслугі 1",
                         "type": "service fee",
-                        "vatGroup": 0
+                        "vatGroup": "0"
                     }
                 ]
             },
@@ -143,7 +143,7 @@
                         "name": "Білет",
                         "ticketId": "123456784",
                         "type": "tickets",
-                        "vatGroup": 0
+                        "vatGroup": "0"
                     },
                     {
                         "amount": 1,
@@ -151,12 +151,12 @@
                         "kkm": true,
                         "name": "Плата за паслугі 2",
                         "type": "service fee",
-                        "vatGroup": 0
+                        "vatGroup": "0"
                     }
                 ]
             },
             {
-                "type": "2",
+                "type": "4",
                 "name": "cardPayment",
                 "cost": 0.05,
                 "components": [
@@ -167,7 +167,7 @@
                         "name": "Білет",
                         "ticketId": "123456784",
                         "type": "tickets",
-                        "vatGroup": 0
+                        "vatGroup": "0"
                     },
                     {
                         "amount": 1,
@@ -175,7 +175,7 @@
                         "kkm": true,
                         "name": "Плата за паслугі 3",
                         "type": "service fee",
-                        "vatGroup": 0
+                        "vatGroup": "0"
                     }
                 ]
             }
