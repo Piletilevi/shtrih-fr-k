@@ -1,0 +1,3 @@
+- json_kvitki_refund.plp  
+    Refund:  
+    Ei saa tagasi osta, kui kassas pole raha piletite eest anda
