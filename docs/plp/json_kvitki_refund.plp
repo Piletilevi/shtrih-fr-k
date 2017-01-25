@@ -17,11 +17,11 @@
             "cardPaymentSetting2": ""
         },
         "printerData": {
-            "type": "fiscal_shtrihm",
-            "printerName": "",
-            "printerRegNumber": "",
-            "comPortNumber": "",
-            "ComPortBaudRate": "",
+            "type": "fiscal",
+            "printerName": "Shtrih_M_By",
+            "printerRegNumber": "123456",
+            "comPortNumber": "3",
+            "comPortBaudRate": "9600",
             "readTimeout": 30,
             "writeTimeout": 30,
             "adminPw": "",
@@ -33,32 +33,40 @@
             {
                 "type": "1",
                 "name": "cachePayment",
-                "cost": 0.1,
+                "cost": 30.00,
                 "components": [
                     {
                         "amount": 1,
-                        "cost": 0.04,
+                        "cost": 12.00,
                         "kkm": true,
-                        "name": "Білет",
+                        "name": "Билет",
                         "ticketId": "123456781",
                         "type": "tickets",
                         "vatGroup": "0"
                     },
                     {
                         "amount": 1,
-                        "cost": 0.04,
+                        "cost": 12.00,
                         "kkm": true,
-                        "name": "Білет",
+                        "name": "Билет",
                         "ticketId": "123456782",
                         "type": "tickets",
                         "vatGroup": "0"
                     },
                     {
                         "amount": 2,
-                        "cost": 0.02,
+                        "cost": 1.00,
                         "kkm": true,
-                        "name": "Плата за паслугі 1",
-                        "type": "service fee",
+                        "name": "Сервисный сбор",
+                        "type": "Type Сервисный сбор",
+                        "vatGroup": "0"
+                    },
+                    {
+                        "amount": 2,
+                        "cost": 2.00,
+                        "kkm": true,
+                        "name": "Плата за обслуживание в зале",
+                        "type": "Type Сервисный сбор",
                         "vatGroup": "0"
                     }
                 ]
