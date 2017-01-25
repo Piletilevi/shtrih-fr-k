@@ -8,6 +8,7 @@
     "salesPointText": "",
     "salesPointCountry": "",
     "salesPoint": "",
+    "transactionDateTime": "",
     "ticketData": {
         "printerData": {
             "type": "ticket_ps",
@@ -42,8 +43,7 @@
                 "totalPrice": "",
                 "imageTop": "",
                 "imageLeft": "",
-                "imageBottom": "",
-                "saleDateTime": ""
+                "imageBottom": ""
             },
             {
                 "ticketId": "",
@@ -73,8 +73,7 @@
                 "totalPrice": "",
                 "imageTop": "",
                 "imageLeft": "",
-                "imageBottom": "",
-                "saleDateTime": ""
+                "imageBottom": ""
             }
         ]
     },
