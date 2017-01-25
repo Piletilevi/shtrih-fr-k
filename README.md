@@ -1,6 +1,9 @@
 ## Printsrv
-Compatible printsrv branch: https://github.com/Piletilevi/printsrv/tree/json
 
+- Compatible printsrv branch:  
+  https://github.com/Piletilevi/printsrv/tree/json
+- Schemas for involved .plp files:  
+  https://github.com/Piletilevi/printsrv/tree/json/jsonschema
 
 ## Functions and attributes involved:
 
