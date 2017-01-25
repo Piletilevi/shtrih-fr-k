@@ -12,7 +12,7 @@
 
 ### connect()
 
-### cut(feedAfterCutCount = 0, cutType = True, password = USER_KASSIR)
+### cut(partialCut = True)
 
 ### feed(feedLineCount = 4)
 
