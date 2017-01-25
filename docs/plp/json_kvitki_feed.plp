@@ -8,6 +8,7 @@
     "salesPointText": "",
     "salesPointCountry": "",
     "salesPoint": "",
+    "transactionDateTime": "",
     "fiscalData": {
         "operation": "feed",
         "printerData": {
