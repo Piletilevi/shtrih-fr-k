@@ -1,0 +1,10 @@
+- json_kvitki_insertcash.plp  
+    Insertcash:  
+    Tuleb välja tshekk sisestatud raha summaga ja operatsiooni nimega, 
+    st raha sisestamise käigus on edukalt tehtud ka vahetuse alustamine
+    Ideaalis ka tagasiside BO'le raha sisestamise õnnestumise kohta, siis kirjutab BO selle ka oma aruandesse. 
+    Enne ei kirjuta, kui on saanud kas kasutajalt või draiverilt tagasisidet.
+
+- json_kvitki_refund.plp  
+    Refund:  
+    Trükitakse tshekk
