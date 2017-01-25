@@ -1,0 +1,4 @@
+- json_kvitki_sale.plp  
+    Sale:  
+    1. Trükitakse tshekk, st müügi alustamisel on edukalt tehtud ka vahetuse algus. 
+    2. Eduka tsheki trükkimise järel trükitakse piletid
