@@ -3,12 +3,12 @@
     "feedbackToken": "",
     "feedbackUrl": "",
     "busnId": "", 
-    "printingDriverVersion": "",
+    "printingDriverVersion": "3.0.0",
     "printingDriverVersionURL": "http://",
-    "salesPointText": "",
-    "salesPointCountry": "",
-    "salesPoint": "",
-    "transactionDateTime": "",
+    "salesPointText": "Prodano:",
+    "salesPointCountry": "Беларусь",
+    "salesPoint": "Пункт продажи Piletilevi",
+    "transactionDateTime": "12.01.2017 17:25",
     "fiscalData": {
         "operation": "endshift",
         "printerData": {
