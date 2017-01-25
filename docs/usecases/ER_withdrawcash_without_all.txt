@@ -1,0 +1,3 @@
+- json_kvitki_withdrawcash.plp
+  Olukorras, kus pole vahetust alustatud ega raha kassasse pandud - ei saa õnnestuda
+  VEATEATE teemad
