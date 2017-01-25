@@ -1,3 +1,7 @@
+## Printsrv
+Compatible printsrv branch: https://github.com/Piletilevi/printsrv/tree/json
+
+
 ## Functions and attributes involved:
 
 ### Connect()
@@ -64,4 +68,3 @@ if v.ECRMode not in [2,3,4]:
 ### PrintReportWithCleaning()
 Closes shift and prints Z-Report
 Requires administrator or system administrator rights
-
