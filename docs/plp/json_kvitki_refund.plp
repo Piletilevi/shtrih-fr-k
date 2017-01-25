@@ -9,7 +9,6 @@
     "salesPointCountry": "",
     "salesPoint": "",
     "transactionDateTime": "",
-    "transactionDateTime": "",
     "fiscalData": {
         "operation": "refund",
         "cardPaymentUnitSettings": {
