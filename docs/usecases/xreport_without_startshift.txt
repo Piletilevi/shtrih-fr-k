@@ -1,0 +1,2 @@
+- json_kvitki_xreport.plp
+  Trükitakse vahearuanne, X report
