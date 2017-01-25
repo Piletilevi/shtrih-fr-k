@@ -5,6 +5,30 @@
 - Schemas for involved .plp files:  
   https://github.com/Piletilevi/printsrv/tree/json/jsonschema
 
+
+## shtrihm.py library
+
+### closeShift()
+
+### connect()
+
+### cut(feedAfterCutCount = 0, cutType = True, password = USER_KASSIR)
+
+### feed(feedLineCount = 4)
+
+### openShift()
+
+### printLine(string = ' ')
+
+### returnSale(sales_options, payment_options, password = USER_KASSIR)
+
+### sale(sales_options, payment_options, password = USER_KASSIR)
+
+### setMode2()
+
+### sysAdminCancelCheck()
+
+
 ## Functions and attributes involved:
 
 ### Connect()
