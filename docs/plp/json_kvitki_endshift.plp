@@ -12,11 +12,11 @@
     "fiscalData": {
         "operation": "endshift",
         "printerData": {
-            "type": "fiscal_shtrihm",
-            "printerName": "",
-            "printerRegNumber": "",
-            "comPortNumber": "",
-            "ComPortBaudRate": "",
+            "type": "fiscal",
+            "printerName": "Shtrih_M_By",
+            "printerRegNumber": "123456",
+            "comPortNumber": "3",
+            "comPortBaudRate": "9600",
             "readTimeout": 30,
             "writeTimeout": 30,
             "adminPw": "",
