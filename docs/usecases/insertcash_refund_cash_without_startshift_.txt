@@ -5,6 +5,6 @@
     Ideaalis ka tagasiside BO'le raha sisestamise õnnestumise kohta, siis kirjutab BO selle ka oma aruandesse. 
     Enne ei kirjuta, kui on saanud kas kasutajalt või draiverilt tagasisidet.
 
-- json_kvitki_refund.plp  
+- json_kvitki_refund_cash.plp  
     Refund:  
     Trükitakse tshekk
