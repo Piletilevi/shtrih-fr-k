@@ -124,8 +124,8 @@
                 ]
             },
             {
-                "type": "1",
-                "name": "cachePayment",
+                "type": "4",
+                "name": "cardPayment",
                 "cost": 6.00,
                 "components": [
                     {
