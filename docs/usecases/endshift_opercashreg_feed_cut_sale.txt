@@ -1,0 +1,10 @@
+- json_kvitki_endshift.plp
+
+- json_kvitki_opencashreg.plp
+
+- json_kvitki_feed.plp
+
+- json_kvitki_cut.plp
+
+- json_kvitki_sale.plp
+  Kas peale eelmiseid operatsioone on ficalnik sellises seisus, et saab müüa?
