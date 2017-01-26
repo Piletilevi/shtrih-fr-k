@@ -1,0 +1,10 @@
+- json_kvitki_endshift.plp
+
+- json_kvitki_insertcash.plp
+  tshekk
+
+- json_kvitki_xreport.plp
+  XReport
+
+- json_kvitki_endshift.plp
+  XReport
