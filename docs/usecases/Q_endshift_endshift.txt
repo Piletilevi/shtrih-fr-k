@@ -1,0 +1,5 @@
+- json_kvitki_endshift.plp
+
+- json_kvitki_endshift.plp
+  Mis juhtub? 
+  Mis tagasiside message fiskalnikult tuleb?
