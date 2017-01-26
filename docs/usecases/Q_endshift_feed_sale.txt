@@ -1,0 +1,6 @@
+- json_kvitki_endshift.plp
+
+- json_kvitki_feed.plp
+
+- json_kvitki_sale_cash.plp
+  Kas feed ilma cut'ita ei takista järgmisi operatsioone?
