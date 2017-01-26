@@ -1,3 +1,5 @@
+- json_kvitki_endshift.plp
+
 - json_kvitki_sale_xx.plp  
     Sale:  
     1. Trükitakse tshekk, st müügi alustamisel on edukalt tehtud ka vahetuse algus. 
