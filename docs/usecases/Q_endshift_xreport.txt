@@ -1,0 +1,5 @@
+- json_kvitki_endshift.plp
+
+- json_kvitki_xreport.plp
+  Kas Trükitakse vahearuanne, X report, või tuleb error message?
+  Milline error message tuleb?
