@@ -1,3 +1,5 @@
+- json_kvitki_endshift.plp
+
 - json_kvitki_startshift.plp  
     Startshift:  
     Fiskalniku staatus muutub - 'vahetus alustatud'
