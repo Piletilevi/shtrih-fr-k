@@ -1,0 +1,4 @@
+- json_kvitki_endshift.plp
+
+- json_kvitki_refund_card.plp
+  Kas kaardimaksega tagasiostu saab teha, esimese asjana uues vahetuses?
