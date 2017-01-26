@@ -1,2 +1,4 @@
+- json_kvitki_endshift.plp
+
 - json_kvitki_xreport.plp
   Trükitakse vahearuanne, X report
