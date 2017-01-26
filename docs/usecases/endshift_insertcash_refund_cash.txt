@@ -1,3 +1,5 @@
+- json_kvitki_endshift.plp
+
 - json_kvitki_insertcash.plp  
     Insertcash:  
     Tuleb välja tshekk sisestatud raha summaga ja operatsiooni nimega, 
