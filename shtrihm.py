@@ -51,10 +51,9 @@ def insist(method, password):
 
 
 OPTIONS = {'feedbackURL': False}
-def init(options) {
+def init(options):
     global OPTIONS
     OPTIONS['feedbackURL'] = options['feedbackURL']
-}
 
 
 def connect():
