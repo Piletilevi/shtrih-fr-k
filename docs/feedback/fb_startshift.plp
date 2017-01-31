@@ -4,5 +4,5 @@
     "busnId": "", 
     "operation": "startshift",
     "status": "ok / fail",
-    "errorMessage": ""
+    "feedBackMessage": ""
 }
