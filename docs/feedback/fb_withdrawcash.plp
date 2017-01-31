@@ -1,0 +1,9 @@
+{
+    "plpVersion": "2.0.0",
+    "feedbackToken": "",
+    "busnId": "", 
+    "operation": "withdrawcash",
+    cashAmount: ,
+    "status": "ok / fail",
+    "feedBackMessage": ""
+}
