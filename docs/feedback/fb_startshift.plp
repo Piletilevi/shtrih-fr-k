@@ -1,0 +1,7 @@
+{
+    "plpVersion": "2.0.0",
+    "feedbackToken": "",
+    "busnId": "", 
+    "operation": "startshift",
+    "status": "ok / fail",   
+}
