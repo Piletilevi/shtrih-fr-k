@@ -1,0 +1,25 @@
+{
+    "plpVersion": "2.0.0",
+    "feedbackToken": "",
+    "busnId": "", 
+    "operation": "sale",
+    "status": "ok / fail",
+    "feedBackMessage": ""
+    "payments": [
+            {
+                "type": "3",
+                "name": "giftTicketPayment",
+                "cost": 24.00,
+            },
+            {
+                "type": "4",
+                "name": "cardPayment",
+                "cost": 6.00,
+            }
+    ]
+}
+
+
+
+
+NB! Makseviisi muutmise protseduur: tagasiside aknas. Järelikult saab BO tagasiside selle kaudu
