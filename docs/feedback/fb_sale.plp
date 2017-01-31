@@ -1,0 +1,8 @@
+{
+    "plpVersion": "2.0.0",
+    "feedbackToken": "",
+    "busnId": "", 
+    "operation": "sale",
+    "status": "ok / fail",
+    "feedBackMessage": ""
+}
