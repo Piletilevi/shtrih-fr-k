@@ -1,0 +1,8 @@
+{
+    "plpVersion": "2.0.0",
+    "feedbackToken": "",
+    "busnId": "", 
+    "operation": "xreport",
+    "status": "ok / fail",
+    "feedBackMessage": ""
+}
