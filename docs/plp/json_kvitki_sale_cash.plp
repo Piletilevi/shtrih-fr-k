@@ -101,7 +101,7 @@
             {
                 "type": "1",
                 "name": "cashPayment",
-                "cost": 24.00,
+                "cost": 30.00,
                 "components": [
                     {
                         "amount": 1,
