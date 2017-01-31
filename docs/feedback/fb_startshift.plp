@@ -3,5 +3,6 @@
     "feedbackToken": "",
     "busnId": "", 
     "operation": "startshift",
-    "status": "ok / fail",   
+    "status": "ok / fail",
+    "errorMessage": ""
 }
