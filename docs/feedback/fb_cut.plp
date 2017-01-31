@@ -4,5 +4,5 @@
     "busnId": "", 
     "operation": "cut",
     "status": "ok / fail",
-    "errorMessage": ""
+    "feedBackMessage": ""
 }
