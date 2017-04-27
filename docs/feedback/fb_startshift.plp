@@ -3,6 +3,7 @@
     "feedbackToken": "",
     "busnId": "", 
     "operation": "startshift",
+    "feedbackType": "driver / cardpayment / fiscal",
     "status": "ok / fail",
     "feedBackMessage": ""
 }
