@@ -3,7 +3,7 @@
     "feedbackToken": "",
     "busnId": "", 
     "operation": "withdrawcash",
-    cashAmount: ,
+    "feedbackType": "driver / cardpayment / fiscal",
     "status": "ok / fail",
     "feedBackMessage": ""
 }
