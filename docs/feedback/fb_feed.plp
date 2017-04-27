@@ -3,6 +3,7 @@
     "feedbackToken": "",
     "busnId": "", 
     "operation": "feed",
+    "feedbackType": "driver / cardpayment / fiscal",
     "status": "ok / fail",
     "feedBackMessage": ""
 }
