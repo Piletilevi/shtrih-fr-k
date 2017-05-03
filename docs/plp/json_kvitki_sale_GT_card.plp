@@ -82,7 +82,8 @@
         "cardPaymentUnitSettings": {
             "cardPaymentUnit": "",
             "cardPaymentSetting1": "",
-            "cardPaymentSetting2": ""
+            "cardPaymentSetting2": "",
+            "cardPaymentSetting3": ""
         },
         "printerData": {
             "type": "fiscal",
