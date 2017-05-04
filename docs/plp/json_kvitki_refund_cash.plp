@@ -2,7 +2,6 @@
     "plpVersion": "2.0.0",
     "feedbackToken": "",
     "feedbackUrl": "",
-    "busnId": "", 
     "printingDriverVersion": "3.0.0",
     "printingDriverVersionURL": "http://",
     "salesPointText": "Prodano:",
@@ -11,6 +10,8 @@
     "transactionDateTime": "12.01.2017 13:25",
     "fiscalData": {
         "operation": "refund",
+        "businessTransactionId": "13782702",
+        "saleTransactionId": "13782701",
         "cardPaymentUnitSettings": {
             "cardPaymentUnit": "",
             "cardPaymentSetting1": "",
