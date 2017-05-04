@@ -78,8 +78,8 @@
     },
     "fiscalData": {
         "operation": "sale",
-        "businessTransactionId": "13782702",
-        "saleTransactionId": "13782701",
+        "businessTransactionId": "13782701",
+        "saleTransactionId": "",
         "cardPaymentUnitSettings": {
             "cardPaymentUnit": "",
             "cardPaymentSetting1": "",
