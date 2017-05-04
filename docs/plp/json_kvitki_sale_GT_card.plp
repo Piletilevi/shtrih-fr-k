@@ -94,10 +94,10 @@
             "comPortBaudRate": 6,
             "readTimeout": 30,
             "writeTimeout": 30,
-            "adminPw": "",
-            "cashierPw": "",
+            "adminPw": "29000",
+            "cashierPw": "1000",
             "certUserPw": "",
-            "sysAdminPw": ""
+            "sysAdminPw": "30000"
         },
         "payments": [
             {
