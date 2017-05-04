@@ -13,10 +13,10 @@
         "businessTransactionId": "13782702",
         "saleTransactionId": "13782701",
         "cardPaymentUnitSettings": {
-            "cardPaymentUnit": "",
-            "cardPaymentSetting1": "",
-            "cardPaymentSetting2": "",
-            "cardPaymentSetting3": ""
+            "cardPaymentUnit": "Ingenico",
+            "cardPaymentSetting1": "PosXML 7.2.0",
+            "cardPaymentSetting2": "192.168.2.45",
+            "cardPaymentSetting3": "4445"
         },
         "printerData": {
             "type": "fiscal",
