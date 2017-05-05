@@ -82,9 +82,9 @@
         "saleTransactionId": "",
         "cardPaymentUnitSettings": {
             "cardPaymentUnit": "Ingenico",
-            "cardPaymentSetting1": "PosXML 7.2.0",
-            "cardPaymentSetting2": "192.168.2.45",
-            "cardPaymentSetting3": "4445"
+            "cardPaymentUnitXml": "PosXML 7.2.0",
+            "cardPaymentUnitIp": "192.168.2.45",
+            "cardPaymentUnitPort": "4445"
         },
         "printerData": {
             "type": "fiscal",
