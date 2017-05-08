@@ -1,7 +1,7 @@
 {
     "plpVersion": "2.0.0",
     "feedbackToken": "",
-    "feedbackUrl": "",
+    "feedbackUrl": "http://bo.piletilevi-ru.test.helmes.ee/cgi-bin/wspd_cgi.sh/WService=plevi/proc/cashier_mod.p?ajax=feedback",
     "operationToken": "",
     "busnId": "", 
     "printingDriverVersion": "3.0.0",
