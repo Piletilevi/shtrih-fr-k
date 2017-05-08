@@ -2,6 +2,7 @@
     "plpVersion": "2.0.0",
     "feedbackToken": "",
     "feedbackUrl": "",
+    "operationToken": "",
     "printingDriverVersion": "3.0.0",
     "printingDriverVersionURL": "http://",
     "salesPointText": "Prodano:",
